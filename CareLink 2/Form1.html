@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="FormStyle.css" />
+    <script src="FormScript.js" defer></script>
+    <title>Find in-home care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&family=Rubik:wght@300&family=Tilt+Neon&display=swap" rel="stylesheet">
+  </head>
+  <body>
+   
+  
+  
+    <div class="progressbar">
+      <div class="progress" id="progress"></div>
+  
+      <div class="progress-step progress-step-active">
+        <i class="fa-regular fa-user"></i>
+      </div>
+      <div class="progress-step">
+        <i class="fa-solid fa-hourglass-half"></i>
+      </div>
+      <div class="progress-step">
+        <i class="fa-regular fa-address-card"></i>
+      </div>
+  
+      <div class="progress-step">
+        <i class="fa-solid fa-file-medical"></i>
+      </div>
+      <div class="progress-step">
+        <i class="fa-solid fa-user-nurse"></i>
+      </div>
+  
+    </div>
+
+    <div class="fixed-div">
+      <span>Already a member?</span>
+      <a href="login.html">Log In  </a><i class="fa-solid fa-arrow-right-to-bracket"></i>
+    </div>
+  
+    <form class="form">
+      <div class="header">
+        <i class="arrow-prev btn btn-prev fa-solid fa-arrow-left"></i>
+        <h1 class="form-title text-center">Find In-Home Care</h1>
+      </div>
+  
+      <!-- Steps -->
+      <div class="form-step form-step-active">
+        <h2>Who Needs Care?</h2>
+        <div class="input-group">
+          <button class="select-btn btn btn-next" type="button">Parent</button>
+        </div>
+        <div class="input-group">
+          <button class="select-btn btn btn-next" type="button">Myself</button>
+        </div>
+        <div class="input-group">
+          <button class="select-btn btn btn-next" type="button">Family Member</button>
+        </div>
+        <div class="input-group">
+          <button class="select-btn btn btn-next" type="button">Someone Else</button>
+        </div>
+      </div>
+      </div>
+      <div class="form-step">
+        <h2>How Soon Do You Need Care?</h2>
+        <div class="input-group">
+          <button class="select-btn btn btn-next" type="button">Urgently (Within a week)</button>
+        </div>
+        <div class="input-group">
+          <button class="select-btn btn btn-next" type="button">Soon (Within a month)</button>
+        </div>
+        <div class="input-group">
+          <button class="select-btn btn btn-next" type="button">Not urgent (Within a few months)</button>
+        </div>
+      </div>
+      <div class="form-step">
+        <h2>Personal information : </h2>
+        <div class="input-group ">
+          <label for="FullName">Full Name</label>
+          <input type="text"  name="FullName" id="FullName" onkeydown="focusNext(event, 'Bdate')"/>
+          <i class="fa-regular fa-circle-check"></i>
+          <i class="fa-regular fa-circle-xmark"></i>
+          <small>Error</small>
+        </div>
+        <div class="input-group ">
+          <label for="Bdate">Date Of Birth</label>
+          <br>
+          <br>
+          <br>
+          <input type="date" id="Bdate" onkeydown="focusNext(event, 'age')">
+          <i class="fa-regular fa-circle-check"></i>
+          <i class="fa-regular fa-circle-xmark"></i>
+          <small>Error</small>
+        </div>
+        <div class="input-group ">
+          <label for="phone">Phone Number</label>
+          <input type="text" placeholder="+213" name="phone" id="phone" maxlength="10" onkeydown="focusNext(event, 'email')"/>
+          <i class="fa-regular fa-circle-check"></i>
+          <i class="fa-regular fa-circle-xmark"></i>
+          <small>Error</small>
+        </div>
+        <div class="input-group ">
+          <label for="email">Email Address</label>
+          <input type="text" name="email" id="email" onkeydown="focusNext(event, 'postcode')" />
+          <i class="fa-regular fa-circle-check"></i>
+          <i class="fa-regular fa-circle-xmark"></i>
+          <small>Error</small>
+        </div>
+        <div class="input-group ">
+          <label for="postcode">Post Code</label>
+          <input type="text" name="postcode" id="postcode" minlength="5" maxlength="5"/>
+          <i class="fa-regular fa-circle-check"></i>
+          <i class="fa-regular fa-circle-xmark"></i>
+          <small>Error</small>
+        </div>
+        <div class="btns-group ">
+          <i class="arrow-next btn btn-next fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+      <div class="form-step">
+        <h4 id="category">Select your category :</h4>
+        <div class="holder">
+          <div class="checkbox">
+            <input name="category" type="checkbox" class="check" id="category1" />
+            <label for="category1" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>Elderly Care</span>
+            </label>
+          </div>
+          <div class="checkbox">
+            <input name="category" type="checkbox" class="check" id="category2" />
+            <label for="category2" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>People with disabilities Care</span>
+            </label>
+          </div>
+          <div class="checkbox" >
+            <input name="category" type="checkbox" class="check" id="category3" />
+            <label for="category3" class="label" >
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span >Post-Surgery Care </span>
+            </label>
+          </div>
+          <div class="checkbox">
+            <input name="category" type="checkbox" class="check" id="category4" />
+            <label for="category4" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>Children Care</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="input-group  Description">
+          <h4 class="dscrpt">Situation Description </h4>
+          <textarea rows="4" cols="50"></textarea>
+          <i class="fa-regular fa-circle-check"></i>
+          <i class="fa-regular fa-circle-xmark"></i>
+          <small>Error</small>
+        </div>
+        <div class="btns-group">
+          <i class=" arrow-next btn btn-next fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+      <div class="form-step">
+        <h2>About The Caregiver</h2>
+      
+        <h4 id="gender">Specify The Budget</h4>
+        <div class="holder">
+          <div class="checkbox">
+            <input name="budget" type="checkbox" class="check" id="check1" />
+            <label for="check1" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="20" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>Below 3 Million DA</span>
+            </label>
+          </div>
+          <div class="checkbox">
+            <input name="budget" type="checkbox" class="check" id="check2" />
+            <label for="check2" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>3 Million DA - 5 Million DA</span>
+            </label>
+          </div>
+          <div class="checkbox">
+            <input name="budget" type="checkbox" class="check" id="check3" />
+            <label for="check3" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>Exceeding 5 Million DA</span>
+            </label>
+          </div>
+        </div>
+      
+        <br>
+      
+        <h4 id="gender">Gender</h4>
+        <div class="holder">
+          <div class="checkbox">
+            <input name="gender" type="checkbox" class="check" id="check4" />
+            <label for="check4" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>Male</span>
+            </label>
+          </div>
+          <div class="checkbox">
+            <input name="gender" type="checkbox" class="check" id="check5" />
+            <label for="check5" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>Female</span>
+            </label>
+          </div>
+          <div class="checkbox">
+            <input name="gender" type="checkbox" class="check" id="check6" />
+            <label for="check6" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>No Preference</span>
+            </label>
+          </div>
+        </div>
+      
+      
+      
+        <h4 id="certification">certification</h4>
+        <div class="holder">
+          <div class="checkbox">
+            <input name="certification" type="checkbox" class="check" id="check7" />
+            <label for="check7" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>Certified</span>
+            </label>
+          </div>
+          <div class="checkbox">
+            <input name="certification" type="checkbox" class="check" id="check8" />
+            <label for="check8" class="label">
+              <svg width="50" height="50" viewbox="0 0 100 100">
+                <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
+                <g transform="translate(0,-952.36222)">
+                  <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4 "
+                    stroke="#1A76D1" stroke-width="3" fill="none" class="path1" />
+                </g>
+              </svg>
+              <span>Not Certified</span>
+            </label>
+          </div>
+        </div>
+      
+        <div class="btns-group">
+          <button class="submit" id="submitButton1" type="button">Submit</button>
+        </div>
+      </div>
+    </form>
+    
+  </body>
+  
+  </html>
